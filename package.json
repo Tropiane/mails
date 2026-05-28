@@ -11,6 +11,7 @@
     "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules --no-notify src/server.ts"
   },
   "dependencies": {
+    "@types/helmet": "^0.0.48",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
