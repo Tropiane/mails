@@ -6,7 +6,7 @@ import App from "./app";
 import connection from "./config/database";
 import { ENV } from "./config/env";
 
-import { mailRouter } from "./modules/mails/routes/mail.router";
+import { mailRouter } from "./modules/mails/mail.router";
 
 App.use(morgan("dev"));
 App.use(helmet());

@@ -1,7 +1,7 @@
 import { Router, Request, Response } from "express";
 
-import MailController from "../controllers/mail.controller";
-import { Mail } from "../interfaces/mail.interface";
+import MailController from "./mail.controller";
+import { MailDTO } from "./mail.interface";
 
 const router = Router();
 const controller = new MailController();
