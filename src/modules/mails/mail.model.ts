@@ -7,7 +7,8 @@ const mailSchema = new mongoose.Schema({
     },
     fechaEnvio: {
         type: Date,
-        required: true
+        required: true,
+        default: Date.now
     },
     asunto: {
         type: String,
@@ -19,10 +20,12 @@ const mailSchema = new mongoose.Schema({
     },
     estado: {
         type: String,
-        required: true
+        required: true,
+        default: "enviado"
     },
     error: {
-        type: String
+        type: String,
+        required: false
     }
 });
 
