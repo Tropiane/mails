@@ -10,7 +10,7 @@ export default class MailService {
 
     async sendMail(mail: MailDTO){
         try {
-            const html = compileTemplate("welcome",{username: mail.destinatario, asunto: mail.asunto, contenido: mail.contenido});
+            const html = compileTemplate("welcome",{name: mail.nombre, destino: mail.destinatario, asunto: mail.asunto, contenido: mail.contenido});
             await transport.sendMail({
                 from: `"Mi Aplicación" <${ENV.mail_username}>`,
                 to: mail.destinatario,
@@ -27,7 +27,7 @@ export default class MailService {
 
     async sendMailChangeStatus(mail: MailDTO){
         try {
-            const html = compileTemplate("actualizacion.caso",{username: mail.destinatario, asunto: mail.asunto, contenido: mail.contenido});
+            const html = compileTemplate("actualizacion.caso",{name: mail.nombre, destino: mail.destinatario, asunto: mail.asunto, contenido: mail.contenido});
             await transport.sendMail({
                 from: `"Mi Aplicación" <${ENV.mail_username}>`,
                 to: mail.destinatario,
