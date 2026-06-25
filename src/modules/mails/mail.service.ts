@@ -8,9 +8,9 @@ import { AppError } from "../../shared/errors/app.error";
 export default class MailService {
     private dao: MailDAO = new MailDAO();
 
-    async sendMail(mail: MailDTO){
+    async sendMail(mail: MailDTO, template?: string){
         try {
-            const html = compileTemplate("welcome",{name: mail.nombre, destino: mail.destinatario, asunto: mail.asunto, contenido: mail.contenido});
+            const html = compileTemplate(template || "welcome",{name: mail.nombre, destino: mail.destinatario, asunto: mail.asunto, contenido: mail.contenido});
             await transport.sendMail({
                 from: `"Mi Aplicación" <${ENV.mail_username}>`,
                 to: mail.destinatario,
