@@ -9,6 +9,7 @@ export default class MailController{
     async sendMail(req: Request<{},{}, {mail: typeof MailSchema, template?: string }>, res: Response) {
         try {
             const validateMail = MailSchema.safeParse(req.body.mail);
+            
             if (!validateMail.success) {
                 return res.status(400).json({message: validateMail.error.message});
             }
