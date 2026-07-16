@@ -1,0 +1,11 @@
+sendmail:
+ post:
+  summary: Enviar Correo generico
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/SendMail'
+  responses:
+    '200':
+      description: Correo Enviado

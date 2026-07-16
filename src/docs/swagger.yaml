@@ -1,0 +1,17 @@
+openapi: 3.0.3
+
+info:
+  title: Mail API
+  version: 1.0.0
+
+  description: "API para envio de correos"
+
+  servers:
+    - url: http://localhost:3000
+
+    paths:
+      /:
+        $ref: './paths/path.general.yaml'
+      
+      /change-status:
+        $ref: './paths/path.change-status.yaml'
